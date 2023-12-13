@@ -1,0 +1,32 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Project1 {
+
+    public static void main(String[] args) {
+        try {
+            // Equivalent Java code for your shell script logic
+            System.out.println("Hello, who am I meeting today. Say your name:");
+            
+            BufferedReader nameReader = new BufferedReader(new InputStreamReader(System.in));
+            String name = nameReader.readLine();
+            
+            System.out.println("Welcome to CIBC, " + name + ".");
+            System.out.println("Please insert your pin:");
+            
+            BufferedReader pinReader = new BufferedReader(new InputStreamReader(System.in));
+            String pin = pinReader.readLine();
+            
+            if ("1218".equals(pin)) {
+                System.out.println("Correct");
+            } else {
+                System.out.println("Invalid, you have 3 more attempts");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
